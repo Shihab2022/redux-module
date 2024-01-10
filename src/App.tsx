@@ -1,8 +1,16 @@
 function App() {
   return (
-    <>
-      <h1>this is react redux project</h1>
-    </>
+    <div className="h-screen w-full flex justify-center items-center">
+      <div className="flex">
+        <button className="px-3 py-2 rounded-md bg-green-500 text-xl text-white">
+          Increment
+        </button>
+        <h1 className="text-3xl mx-10">0</h1>
+        <button className="px-3 py-2 rounded-md bg-red-500 text-xl text-white">
+          Decrement
+        </button>
+      </div>
+    </div>
   );
 }
 
