@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 import logger from 'redux-logger'
 import counterSlice from './features/counterSlice'
 import CustomLogger from './middleware/logger'
+import todoSlice from './features/todoSlice'
 
 export const store = configureStore({
     reducer: {
 
         counter: counterSlice,
+        todos: todoSlice
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(CustomLogger),
 })
