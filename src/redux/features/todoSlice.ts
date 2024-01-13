@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
-import type, { PayloadAction } from "@reduxjs/toolkit"
-type TTodo = {
+import { PayloadAction } from "@reduxjs/toolkit"
+export type TTodo = {
     title: string,
+    id: string,
     description: string,
     isCompleted?: boolean
 }
@@ -18,10 +19,13 @@ const todoSlice = createSlice({
     reducers: {
         addTodo: (state, action: PayloadAction<TTodo>) => {
             state.todos.push({ ...action.payload, isCompleted: false })
+        },
+        removeToDo: (state, action: PayloadAction<string>) => {
+            state.todos = state.todos.filter(todo => todo.id !== action.payload)
         }
     }
 })
 
-export const { addTodo } = todoSlice.actions
+export const { addTodo, removeToDo } = todoSlice.actions
 
 export default todoSlice.reducer

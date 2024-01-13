@@ -21,8 +21,19 @@ const TodoModal = () => {
   const dispatch = useAppDispatch();
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
-    dispatch(addTodo({ title: task, description }));
-    console.log({ task, description });
+    const generateRandomString = (length: any) =>
+      [...Array(length)]
+        .map(
+          () =>
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"[
+              Math.floor(Math.random() * 62)
+            ]
+        )
+        .join("");
+
+    const id = generateRandomString(20);
+
+    dispatch(addTodo({ title: task, description, id }));
   };
 
   return (
