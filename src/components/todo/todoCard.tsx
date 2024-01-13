@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../ui/button";
 
 const TodoCard = () => {
   return (
@@ -8,8 +9,8 @@ const TodoCard = () => {
       <p>time</p>
       <p>description</p>
       <div className="space-x-5">
-        <button>delete</button>
-        <button>edit</button>
+        <Button className="bg-red-500">delete</Button>
+        <Button className="bg-green-500">edit</Button>
       </div>
     </div>
   );
